@@ -329,6 +329,7 @@ function tbz_wc_voguepay_init() {
 						else {
 
             				$order->payment_complete( $transaction_id );
+            				$order->update_status( 'completed' );
 
 		                    //Add admin order note
 		                    $order->add_order_note( 'Payment Via Voguepay.<br />Transaction ID: '.$transaction_id );
